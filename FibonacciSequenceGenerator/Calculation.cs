@@ -69,14 +69,52 @@ namespace FibonacciSequenceGenerator
 
         public static long Fibonacci(long n)
         {
-            if (n <= 1)
-                fibCache[n] = 1;
-            if (fibCache[n] == 0)
-                fibCache[n] = Fibonacci(n - 1) + Fibonacci(n - 2);
+            
+            try
+            {
+                if (n <= Convert.ToInt64(1))
+                {
+                    fibCache[n] = 1;
+                }
 
-            Console.WriteLine(fibCache[n]);
-            Console.ReadLine();
+                if (fibCache[n] == 0)
+                {
+                    fibCache[n] = Fibonacci(n - 1) + Fibonacci(n - 2);
+                }
+
+                Console.WriteLine(fibCache[n]);
+                Console.ReadLine();
+                
+            }
+            //catch (ArgumentOutOfRangeException)
+            //{
+
+            //    Console.WriteLine("Error: ArgumentOutOfRangeException");
+            //    Console.ReadLine();
+          
+
+
+            //}
+            catch (IndexOutOfRangeException)
+            {
+               
+                Console.WriteLine("Error: IndexOutOfRangeException" + "\r\n"+
+                    "\r\n" + " You have entered a number that was out of range," + "\r\n"+
+                    " try a lower starting number"+"\r\n");
+                Console.WriteLine("Press enter to restart the aplication");
+                Console.ReadLine();
+
+                
+                // start new process
+                
+                System.Diagnostics.Process.Start("FibonacciSequenceGenerator.exe");
+
+                // close current process
+                Environment.Exit(0);
+            }
+
             return fibCache[n];
+
         }
 
         //public static void MathProblem()

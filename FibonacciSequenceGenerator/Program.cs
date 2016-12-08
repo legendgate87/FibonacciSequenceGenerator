@@ -36,8 +36,19 @@ namespace FibonacciSequenceGenerator
             {
                 Console.Clear();
                 Console.WriteLine("Enter number: ");
-                long n = Convert.ToInt64(Console.ReadLine());
-                Calculation.Fibonacci(n);
+                try
+                {
+                    long n = Convert.ToInt64(Console.ReadLine());
+                    Calculation.Fibonacci(n);
+                }
+                catch(FormatException)
+                {
+                    Console.WriteLine("Error: FormatException"+"\r\n" + " You must enter a valid input");
+                    Console.ReadLine();
+                    System.Diagnostics.Process.Start("FibonacciSequenceGenerator.exe");
+
+                }
+
             }
             else if (userPress == ConsoleKey.F4)
             {
