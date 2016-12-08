@@ -43,7 +43,7 @@ namespace FibonacciSequenceGenerator
 
         
         
-            public int Fibonacci2(int n)
+            public static int Fibonacci2(int n)
         {
             int low = 1;
             int high = 1;
@@ -54,15 +54,17 @@ namespace FibonacciSequenceGenerator
                 low = oldHigh;
             }
 
-
+            Console.WriteLine(low);
+            Console.ReadLine();
             return low;
         }
 
         public static void FibDynamic()
         {
-            
-            Console.WriteLine(Fibonacci(7200));
+            Console.WriteLine("Press enter to start");
             Console.ReadLine();
+            Console.WriteLine(Fibonacci(7200));
+            
         }
 
         public static long Fibonacci(long n)
@@ -72,74 +74,75 @@ namespace FibonacciSequenceGenerator
             if (fibCache[n] == 0)
                 fibCache[n] = Fibonacci(n - 1) + Fibonacci(n - 2);
 
+            Console.WriteLine(fibCache[n]);
+            Console.ReadLine();
             return fibCache[n];
         }
 
-        public static void MathProblem()
-        {
-            List<int> cal = new List<int>();
-            List<int> numbs = new List<int>();
+        //public static void MathProblem()
+        //{
+        //    List<int> cal = new List<int>();
+        //    List<int> numbs = new List<int>();
 
-            cal.Add(1);
-            cal.Add(2);
-            cal.Add(3);
-            cal.Add(4);
+        //    cal.Add(1);
+        //    cal.Add(2);
+        //    cal.Add(3);
+        //    cal.Add(4);
 
-            numbs.Add(8);
-            numbs.Add(80);
-            numbs.Add(88);
-            numbs.Add(800);
-            numbs.Add(880);
-            numbs.Add(888);
+        //    numbs.Add(8);
+        //    numbs.Add(80);
+        //    numbs.Add(88);
+        //    numbs.Add(800);
+        //    numbs.Add(880);
+        //    numbs.Add(888);
 
             
-            var reslut= 0;
+        //    var reslut= 0;
 
 
-            while(reslut != 931)
-            {
-                int pos2 = rnd.Next(numbs.Count);
+        //    while(reslut != 931)
+        //    {
+        //        int pos2 = rnd.Next(numbs.Count);
 
-                int numbDo = numbs[pos2];
+        //        int numbDo = numbs[pos2];
 
-                int pos3 = rnd.Next(numbs.Count);
+        //        int pos3 = rnd.Next(numbs.Count);
 
-                Thread.Sleep(100);
-                int numbDo2 = numbs[pos3];
+        //        Thread.Sleep(100);
+        //        int numbDo2 = numbs[pos3];
 
-                int pos4 = rnd.Next(numbs.Count);
+        //        int pos4 = rnd.Next(numbs.Count);
 
-                Thread.Sleep(100);
-                int numbDo3 = numbs[pos4];
+        //        Thread.Sleep(100);
+        //        int numbDo3 = numbs[pos4];
 
-                int pos5 = rnd.Next(numbs.Count);
+        //        int pos5 = rnd.Next(numbs.Count);
 
-                Thread.Sleep(100);
-                int numbDo4 = numbs[pos5];
+        //        Thread.Sleep(100);
+        //        int numbDo4 = numbs[pos5];
 
-                int pos6 = rnd.Next(numbs.Count);
+        //        int pos6 = rnd.Next(numbs.Count);
 
-                Thread.Sleep(100);
-                int numbDo5 = numbs[pos6];
+        //        Thread.Sleep(100);
+        //        int numbDo5 = numbs[pos6];
 
-                int pos7 = rnd.Next(numbs.Count);
+        //        int pos7 = rnd.Next(numbs.Count);
 
-                Thread.Sleep(100);
-                int numbDo6 = numbs[pos7];
+        //        Thread.Sleep(100);
+        //        int numbDo6 = numbs[pos7];
 
 
 
                 
-                Console.WriteLine($"{numbDo} {numbDo2} {numbDo3} {numbDo4} {numbDo5} {numbDo6}");
-                Console.WriteLine($"{(numbDo / numbDo2) + numbDo3 + numbDo4 + numbDo5 + numbDo6}");
+        //        Console.WriteLine($"{numbDo} {numbDo2} {numbDo3} {numbDo4} {numbDo5} {numbDo6}");
+        //        Console.WriteLine($"{(numbDo / numbDo2) + numbDo3 + numbDo4 + numbDo5 + numbDo6}");
                
-                Console.ReadLine();
+        //        Console.ReadLine();
 
-            }
+        //    }
 
-          
-            
-        }
+  
+        //}
         
 
     }
